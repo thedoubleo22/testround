@@ -23,6 +23,14 @@ function randomizer(lat, long) {
         var resp_rest = response.restaurants;
         console.log(response);
 
+        if (resp_rest.length === 0) {
+            var featured = $("<img>");
+            featured.addClass("image");
+            featured.attr("src", "./assets/images/sad.png");
+            featured.attr("width", "300px")
+            $("#map-canvas").html(featured);
+        };
+
         var i = resp_rest[Math.floor(Math.random() * resp_rest.length)];
 
         //changing the restaurant string to an int.
@@ -31,11 +39,7 @@ function randomizer(lat, long) {
         var latLong = { lat: nlat, lng: nlong }
 
         //sending the random location to HTML
-        var featured = $("<img>");
-        featured.addClass("image");
-        featured.attr("src", i.restaurant.featured_image);
-        featured.attr("width", "300px")
-        $("#featured").html(featured);
+        
         $("#name").html("Name: " + i.restaurant.name);
         $("#add").html("Address: " + i.restaurant.location.address);
         $("#cuisine").html("Cuisine: " + i.restaurant.cuisines);
