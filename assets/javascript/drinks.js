@@ -45,7 +45,7 @@ function randomizer(lat, long) {
         $("#add").html("Address: " + i.restaurant.location.address);
         $("#cost").html("Cost for 2: $" + i.restaurant.average_cost_for_two);
         $("#rating").html("Rating: " + i.restaurant.user_rating.rating_text);
-        
+
 
         // GOOGLE MAPS STARTS HERE------------------------------
 

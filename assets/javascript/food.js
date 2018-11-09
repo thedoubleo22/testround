@@ -39,11 +39,11 @@ function randomizer(lat, long) {
         var latLong = { lat: nlat, lng: nlong }
 
         //sending the random location to HTML
-        
+
         $("#name").html("Name: " + i.restaurant.name);
         $("#add").html("Address: " + i.restaurant.location.address);
         $("#cuisine").html("Cuisine: " + i.restaurant.cuisines);
-        $("#cost").html("Cost for 2: " + i.restaurant.average_cost_for_two);
+        $("#cost").html("Cost for 2: $" + i.restaurant.average_cost_for_two);
         $("#rating").html("Rating: " + i.restaurant.user_rating.rating_text);
 
         // GOOGLE MAPS STARTS HERE------------------------------
@@ -108,7 +108,7 @@ function initialize() {
         $("#featured, #name, #add, #cost, #cuisine, #rating, #map-canvas, #newLoc, #refresh, .card").show();
         $("#current, #searchTextField").hide();
     });
-    
+
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
