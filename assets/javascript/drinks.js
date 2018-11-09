@@ -2,6 +2,8 @@
 var coordinates;
 var lat;
 var long;
+var lat1;
+var long1;
 
 //function to randomize the restaurants based off locaiton
 function randomizer(lat, long) {
@@ -74,11 +76,11 @@ function randomizer(lat, long) {
 };
 
 //Hiding features of the app
-$("#featured, #name, #add, #cost, #cuisine, #rating, #map-canvas, #newLoc, #refresh").hide();
+$("#featured, #name, #add, #cost, #cuisine, #rating, #map-canvas, #newLoc, #refresh, .card").hide();
 
 //giving permision to use current location and showing features once location is determined
 $("#current").on("click", function () {
-    $("#featured, #name, #add, #cost, #cuisine, #rating, #map-canvas, #newLoc, #refresh").show();
+    $("#featured, #name, #add, #cost, #cuisine, #rating, #map-canvas, #newLoc, #refresh, .card").show();
     $("#current, #searchTextField").hide();
     getLocation();
 })
@@ -104,7 +106,7 @@ function initialize() {
         lat = place.geometry.location.lat()
         long = place.geometry.location.lng()
         randomizer(lat, long)
-        $("#featured, #name, #add, #cost, #cuisine, #rating, #map-canvas, #newLoc, #refresh").show();
+        $("#featured, #name, #add, #cost, #cuisine, #rating, #map-canvas, #newLoc, #refresh, .card").show();
         $("#current, #searchTextField").hide();
     });
 }
